@@ -76,12 +76,12 @@ CREATE TABLE ditulis (
     CONSTRAINT fk_ditulis_pengarang FOREIGN KEY (id_pengarang) REFERENCES pengarang(id_pengarang)
 );
 
-CREATE TABLE berisi (
+CREATE TABLE detail_order (
     id_order INTEGER, 
     id_buku BIGINT,
     jumlah_item INTEGER NOT NULL,
-    total_buku NUMERIC(12, 2), 
+    total_harga NUMERIC(12, 2), 
     PRIMARY KEY (id_order, id_buku), 
-    CONSTRAINT fk_berisi_order FOREIGN KEY (id_order) REFERENCES "Order"(id_order),
-    CONSTRAINT fk_berisi_buku FOREIGN KEY (id_buku) REFERENCES buku(id_buku)
+    CONSTRAINT fk_detail_order_order FOREIGN KEY (id_order) REFERENCES "Order"(id_order),
+    CONSTRAINT fk_detail_order_buku FOREIGN KEY (id_buku) REFERENCES buku(id_buku)
 );
