@@ -85,3 +85,4 @@ CREATE TABLE detail_order (
     CONSTRAINT fk_detail_order_order FOREIGN KEY (id_order) REFERENCES "Order"(id_order),
     CONSTRAINT fk_detail_order_buku FOREIGN KEY (id_buku) REFERENCES buku(id_buku)
 );
+
